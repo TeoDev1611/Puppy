@@ -1,2 +1,4 @@
 # Editor workspaces
 *.code-workspace
+# Files
+*.json

@@ -1,5 +1,5 @@
 {
-// deno-fmt-ignore-file
+  // deno-fmt-ignore-file
   "deno.enable": true,
   "deno.lint": true,
   "deno.unstable": true,

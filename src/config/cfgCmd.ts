@@ -1,4 +1,4 @@
-import { Command } from "https://deno.land/x/cliffy/command/mod.ts";
+import { Command } from "https://deno.land/x/cliffy@v0.19.2/command/mod.ts";
 import { writeConfigDefault } from "./readJsoncfg.ts";
 
 // Create the config command

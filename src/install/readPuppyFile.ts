@@ -1,8 +1,8 @@
-import { exists } from "https://deno.land/std/fs/mod.ts";
+import { existsSync } from "https://deno.land/std@0.99.0/fs/mod.ts";
 
-function readContent() {
+async function readContent() {
   const currentDir = Deno.cwd();
-  const puppyPath = exists(`${currentDir}/puppy.json`);
+  const puppyPath = await existsSync(`${currentDir}/puppy.json`);
   console.log(puppyPath);
 }
 
