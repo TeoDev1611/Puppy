@@ -9,9 +9,9 @@ function writeJson(path: string, data: Record<string, unknown>) {
   }
 }
 
-function getJson(filePath: string): Record<string,unknown> {
-  const content = JSON.parse(Deno.readTextFileSync(filePath))
-  return content
+function getJson(filePath: string): Record<string, unknown> {
+  const content = JSON.parse(Deno.readTextFileSync(filePath));
+  return content;
 }
 
 export { getJson, writeJson };

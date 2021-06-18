@@ -8,8 +8,8 @@ function readContent() {
     const data = getJson(`${currentDir}/puppy.json`);
     console.log(data);
   } else {
-      log.error("File not found check if the **puppy.json** exists")
+    log.error("File not found check if the **puppy.json** exists");
   }
 }
 
-export { readContent, currentDir };
+export { currentDir, readContent };
