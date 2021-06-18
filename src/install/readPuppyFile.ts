@@ -1,9 +1,15 @@
 import { existsSync } from "https://deno.land/std@0.99.0/fs/mod.ts";
+import { getJson } from "../utils/json.ts";
+import * as log from "../utils/colors.ts";
 
-async function readContent() {
-  const currentDir = Deno.cwd();
-  const puppyPath = await existsSync(`${currentDir}/puppy.json`);
-  console.log(puppyPath);
+const currentDir = Deno.cwd();
+function readContent() {
+  if (existsSync(`${currentDir}/puppy.json`)) {
+    const data = getJson(`${currentDir}/puppy.json`);
+    console.log(data);
+  } else {
+      log.error("File not found check if the **puppy.json** exists")
+  }
 }
 
-export { readContent };
+export { readContent, currentDir };
