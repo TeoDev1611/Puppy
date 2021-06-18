@@ -1,6 +1,6 @@
 import * as log from "../utils/colors.ts";
 
-function writeJson(path: string, data: Record<string,unknown>) {
+function writeJson(path: string, data: Record<string, unknown>) {
   try {
     Deno.writeTextFile(path, JSON.stringify(data));
     log.success("Succesfuly writed the data");

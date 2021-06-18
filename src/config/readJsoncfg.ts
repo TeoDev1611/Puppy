@@ -14,15 +14,14 @@ const dir = projectDirs.load("com", "TeoDev1611", "puppy").preferenceDir;
 
 function writeConfigDefault() {
   if (existsSync(`${dir}`)) {
-    console.log("Exisit");
-    console.log(existsSync(`${dir}`));
+    log.info("Configuration already");
   } else {
     log.info("Creating the configuration directory");
     Deno.mkdir(dir);
     log.info("Creating the default config values");
     writeJson(`${dir}/config.json`, defaultConfig);
-    log.success("Succesfuly setup the configuration")
+    log.success("Succesfuly setup the configuration");
   }
 }
 
-export { writeConfigDefault };
+export { dir, writeConfigDefault };
