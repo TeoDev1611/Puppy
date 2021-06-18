@@ -3,12 +3,13 @@ import { getJson } from "../utils/json.ts";
 import * as log from "../utils/colors.ts";
 
 const currentDir = Deno.cwd();
-function readContent() {
+function readContent(): Record<string,unknown> {
   if (existsSync(`${currentDir}/puppy.json`)) {
     const data = getJson(`${currentDir}/puppy.json`);
-    console.log(data);
+    return data
   } else {
     log.error("File not found check if the **puppy.json** exists");
+    return {"error": "File not found"}
   }
 }
 
