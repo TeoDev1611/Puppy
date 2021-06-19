@@ -1,6 +1,6 @@
 import { Command } from "https://deno.land/x/cliffy@v0.19.2/command/mod.ts";
-import { dir, writeConfigDefault } from "./readJsoncfg.ts";
-import * as log from "../utils/colors.ts";
+import { dir, writeConfigDefault } from "@config/readJsoncfg.ts";
+import * as log from "@utils/colors.ts";
 
 // Create the config command
 const cfgCmd = new Command()

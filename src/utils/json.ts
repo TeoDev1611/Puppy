@@ -1,4 +1,4 @@
-import * as log from "../utils/colors.ts";
+import * as log from "@utils/colors.ts";
 
 function writeJson(path: string, data: Record<string, unknown>) {
   try {

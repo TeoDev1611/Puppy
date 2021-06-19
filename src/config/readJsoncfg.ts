@@ -1,7 +1,7 @@
 import { projectDirs } from "https://deno.land/x/directories@v0.3.3/mod.ts";
 import { existsSync } from "https://deno.land/std@0.99.0/fs/mod.ts";
-import * as log from "../utils/colors.ts";
-import { writeJson } from "../utils/json.ts";
+import * as log from "@utils/colors.ts";
+import { writeJson } from "@utils/json.ts";
 
 // Default content
 

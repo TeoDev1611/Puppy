@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@utils/": "./src/utils/",
+    "@core/": "./src/core/",
+    "@config/": "./src/config",
+    "@install/": "./src/install"
+  }
+}

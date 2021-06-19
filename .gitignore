@@ -1,4 +1,4 @@
 # Editor workspaces
 *.code-workspace
 # Files
-*.json
+puppy.json
