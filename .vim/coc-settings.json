@@ -13,5 +13,6 @@
   "prettier.disableLanguages": [
     "typescript",
     "javascript"
-  ]
+  ],
+  "deno.importMap": "./import_map.json"
 }
