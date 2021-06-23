@@ -30,35 +30,37 @@ import (
 
 var (
 	showPath bool
+	writeCfg bool
 )
 
 // configCmd represents the config command
 var configCmd = &cobra.Command{
 	Use:   "config",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "The configuration options and helps for your Best Experience",
+	Long: `Configuration for Puppy hum yeah is necesary check the options ( FOR A PRO USER IN PUPPY )
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+In case the help command is not clear (even if it is :p) you can check the documentation on the Puppy wiki
+
+Puppy the Dog Vimmer Power
+`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if showPath {
 			fmt.Println("Configuration path for puppy")
 			fmt.Print(core.ConfigPath)
 		}
+		if writeCfg {
+			fmt.Println("Writing the default config")
+			core.WriteConfig()
+			fmt.Printf("The config values are: \n Write logs file: %t \n Execute automatical the Do field: %t \n Update with sh Script: %t ", core.Settings.LogOut, core.Settings.ExecuteDoAfter, core.Settings.UseShUpdate)
+		}
 	},
+	Example: "puppy config -p",
+	Aliases: []string{"cfg", "cg"},
 }
 
 func init() {
 	rootCmd.AddCommand(configCmd)
 
 	configCmd.Flags().BoolVarP(&showPath, "path", "p", false, "Show the configuration path for Puppy")
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// configCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// configCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	configCmd.Flags().BoolVarP(&writeCfg, "write", "w", false, "Write the default configuration for Puppy")
 }

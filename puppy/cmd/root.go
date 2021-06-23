@@ -30,16 +30,14 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "puppy",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+	Short: "The more faster package manager for Vim | Neovim powered by Golang and the Dog Power",
+	Long: `Puppy what is that?: The more faster Vim Neovim Package manager, Why ? Using the Golang power is the best
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+In case the help command is not clear (even if it is :p) you can check the documentation on the Puppy wiki
+
+Puppy the Dog Vimmer Power`,
+
+	Example: "puppy config -w",
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

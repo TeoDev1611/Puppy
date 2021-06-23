@@ -10,21 +10,23 @@ import (
 
 var ConfigPath = configdir.LocalConfig("puppy")
 
+type AppSettings struct {
+	LogOut         bool `json:"writeLogs"`
+	UseShUpdate    bool `json:"shUpdate"`
+	ExecuteDoAfter bool `json:"executeAfterDo"`
+}
+
+var Settings AppSettings
+
 func WriteConfig() {
 	err := configdir.MakePath(ConfigPath) // Ensure it exists.
 	if err != nil {
 		panic(err)
 	}
 	configFile := filepath.Join(ConfigPath, "settings.json")
-	type AppSettings struct {
-		LogOut         bool `json:"writeLogs"`
-		UseShUpdate    bool `json:"shUpdate"`
-		ExecuteDoAfter bool `json:"executeAfterDo"`
-	}
-	var settings AppSettings
 	if _, err = os.Stat(configFile); os.IsNotExist(err) {
 		// Create the new config file.
-		settings = AppSettings{true, true, false}
+		Settings = AppSettings{true, true, false}
 		fh, err := os.Create(configFile)
 		if err != nil {
 			panic(err)
@@ -32,7 +34,7 @@ func WriteConfig() {
 		defer fh.Close()
 
 		encoder := json.NewEncoder(fh)
-		encoder.Encode(&settings)
+		encoder.Encode(&Settings)
 	} else {
 		// Load the existing file.
 		fh, err := os.Open(configFile)
@@ -42,6 +44,6 @@ func WriteConfig() {
 		defer fh.Close()
 
 		decoder := json.NewDecoder(fh)
-		decoder.Decode(&settings)
+		decoder.Decode(&Settings)
 	}
 }
