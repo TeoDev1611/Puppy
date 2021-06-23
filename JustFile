@@ -1,0 +1,2 @@
+run:
+    go run puppy\main.go --help
